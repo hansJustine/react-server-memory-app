@@ -27,12 +27,13 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true })
         console.log(err.message);
     })
 
-app.use('/posts', postRoutes);
-
 
 app.get('/', (req, res) => {
     res.send('Hello to Memories API');
 });
+app.use('/posts', postRoutes);
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)
